@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:opensource_project/flat_picker.dart';
+import 'package:picker/flat_picker.dart';
 
 /// 비용, 인프라 -> 지표 위주로
 /// 깃허브와 링크
@@ -16,7 +16,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.white,
@@ -52,22 +51,21 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             FlatPicker(
               itemCount: 10,
-              itemBuilder:
-                  (context, index, isSelected) => Container(
-                    height: 50,
-                    width: 100,
-                    color: Colors.blue.withOpacity(0.2),
-                    child: Center(
-                      child: Text(
-                        'Item $index',
-                        style: TextStyle(
-                          color: isSelected ? Colors.blue : Colors.grey,
-                          fontWeight:
-                              isSelected ? FontWeight.bold : FontWeight.normal,
-                        ),
-                      ),
+              itemBuilder: (context, index, isSelected) => Container(
+                height: 50,
+                width: 100,
+                color: Colors.blue.withOpacity(0.2),
+                child: Center(
+                  child: Text(
+                    'Item $index',
+                    style: TextStyle(
+                      color: isSelected ? Colors.blue : Colors.grey,
+                      fontWeight:
+                          isSelected ? FontWeight.bold : FontWeight.normal,
                     ),
                   ),
+                ),
+              ),
               onSelectedItemChanged: (index) => print('Selected: $index'),
               itemExtent: 50,
               itemWidth: 100,
